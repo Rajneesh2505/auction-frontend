@@ -32,7 +32,7 @@ setErr("")
 },3000)
         }
         else{
-            axios.post("https://auction-website-t4oa.onrender.com/signup",newUser).then(data=>{
+            axios.post("https://auction-website-server.onrender.com/signup",newUser).then(data=>{
                 if(data.statusText){
 navigate("/signin")
                 }
