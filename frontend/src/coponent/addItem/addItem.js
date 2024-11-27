@@ -33,13 +33,14 @@ setTimeout(()=>{
 },5000)
     }else{
       if(state.data){
-        axios.post("https://auction-website-t4oa.onrender.com/auction",{...fileName,img:fileName.img,_id:state.data[0]._id}).then(data=>{
+        axios.post("https://auction-website-server.onrender.com/auction",{...fileName,img:fileName.img,_id:state.data[0]._id}).then(data=>{
           if(data.statusText=="OK"){
-    navigate("/")
+    // navigate("/")
           }
          }).catch(err=>{
          console.log(err)
          })
+         navigate("/")
       }else{
 navigate("/signin")
       }
