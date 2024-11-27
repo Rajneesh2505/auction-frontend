@@ -7,7 +7,7 @@ const AuctionCard=()=>{
     const [cardData,setCardData]=useState([])
     const navigate=useNavigate()
     useEffect(()=>{
-fetch("https://auction-website-t4oa.onrender.com/auction").then(data=>{
+fetch("https://auction-website-server.onrender.com/auction").then(data=>{
     return data.json()
 }).then(data=>{
     setCardData([...data])
