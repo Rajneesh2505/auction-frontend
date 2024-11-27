@@ -27,7 +27,7 @@ const Auction=()=>{
         if(state.token){
             const bidderId=state.data[0]._id
             let bidamount=Number(bidItem[0].startingPrice)+Number(bidAmount)
-axios.post("https://auction-website-t4oa.onrender.com/bid",{bidder:bidderId,auction:id[2],bidAmount:bidamount}).then(data=>{
+axios.post("https://auction-website-server.onrender.com/bid",{bidder:bidderId,auction:id[2],bidAmount:bidamount}).then(data=>{
     setBidAmount("")
 }).catch(err=>{
     console.log("err",err.message)
@@ -45,7 +45,7 @@ navigate("/signin")
         setEndBid(end)
     }
     useEffect(()=>{
-        fetch(`http://localhost:5000/${pathname}`).then(data=>{
+        fetch(`https://auction-website-server.onrender.com/${pathname}`).then(data=>{
           return data.json()
         }).then(data=>{
             setBidItem([data[0]])
