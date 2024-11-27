@@ -10,7 +10,7 @@ const Winner=({endTime})=>{
     const [show ,setShow]=useState(false)
     const id=pathname.split("/")
     useEffect(()=>{
-            fetch(`https://auction-website-t4oa.onrender.com/bid/${id[2]}`).then(data=>{
+            fetch(`https://auction-website-server.onrender.com/bid/${id[2]}`).then(data=>{
                 return data.json()
              }).then(data=>{
                 setWinner([data[data.length-1]])
