@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom"
 
 function winner(data){
 return new Promise((resolve,reject)=>{
-        axios.post("https://auction-website-t4oa.onrender.com/iswin",data[data.length-1]).then(data=>{
+        axios.post("https://auction-website-server.onrender.com/iswin",data[data.length-1]).then(data=>{
             resolve(data)
         }).catch(err=>{
             reject(err.message)
@@ -17,7 +17,7 @@ const Bid=({boxVisibility,startBid})=>{
     const {pathname}=useLocation()
     const id=pathname.split("/")
     useEffect(()=>{
-fetch(`https://auction-website-t4oa.onrender.com/bid/${id[2]}`).then(data=>{
+fetch(`https://auction-website-server.onrender.com/bid/${id[2]}`).then(data=>{
    return data.json()
 }).then(data=>{
    setBidderList(data)
